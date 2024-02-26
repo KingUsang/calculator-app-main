@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/KingUsang/calculator-app-main)
-- Live Site URL: [Add live site URL here](https://kingusang.github.io/calculator-app-main/)
+- Solution URL: [Here is a link to my solution](https://github.com/KingUsang/calculator-app-main)
+- Live Site URL: [Here is a link to a live preview](https://kingusang.github.io/calculator-app-main/)
 
 ## My process
 
