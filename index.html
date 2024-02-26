@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css" type="text/css" media="all" />
+  
+  <title>Frontend Mentor | Calculator app</title>
+  
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div>Calc</div>
+      <div>
+        <span>Theme</span>
+        <div id="theme-container">
+          <span id="theme-numbers">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+          </span>
+          <input type="range" max="2" class="theme-slider"/>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="screen">
+        <div id="input"></div>
+        <div id="output"></div>
+      </div>
+      <div id="key-pad">
+        <button data-key="7">
+          <span class="front">7</span>
+        </button>
+        <button data-key="8">
+          <span class="front">8</span>
+        </button>
+        <button data-key="9">
+          <span class="front">9</span>
+        </button>
+        <button id="delete" data-key="Delete">
+          <span class="front special">DEL</span>
+        </button>
+        <button data-key="4">
+          <span class="front">4</span>
+        </button>
+        <button data-key="5">
+          <span class="front">5</span>
+        </button>
+        <button data-key="6">
+          <span class="front">6</span>
+        </button>
+        <button data-key="+">
+          <span class="front">+</span>
+        </button>
+        <button data-key="1">
+          <span class="front">1</span>
+        </button>
+        <button data-key="2">
+          <span class="front">2</span>
+        </button>
+        <button data-key="3">
+          <span class="front">3</span>
+        </button>
+        <button data-key="-">
+          <span class="front"> -</span>
+        </button>
+        <button data-key="0">
+          <span class="front">0</span>
+        </button>
+        <button data-key=".">
+          <span class="front">.</span>
+        </button>
+        <button data-key="/">
+          <span class="front">÷</span>
+        </button>
+        <button data-key="*">
+          <span class="front">×</span>
+        </button>
+        <button id="reset" data-key="Reset">
+          <span class="front special">RESET</span>
+        </button>
+        <button id="equals" data-key="=">
+          <span class="front special"> =</span>
+        </button>
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/KingUsang">King Usang</a>.
+    </footer>
+  </div>
+  <script src="js/script.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

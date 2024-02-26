@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root.light {
+  --background-color: #e6e6e6;
+  --screen-color: #fff;
+  --text-color: hsl(60, 10%, 19%);
+  --keypad-color: #d3cdcd;
+  --key-color: hsl(35, 11%, 61%);
+  --key-front-color: hsl(45, 7%, 89%);
+  --delete-key-color: hsl(185, 58%, 25%);
+  --delete-key-front-color: hsl(185, 52%, 37%);
+  --equals-key-color: hsl(25, 99%, 27%);
+  --equals-key-front-color: hsl(25, 88%, 45%);
+}
+
+/* Dark Theme */
+:root.dark {
+  --background-color: hsl(222, 26%, 31%);
+  --screen-color: hsl(224, 36%, 15%);
+  --text-color: #fff;
+  --keypad-color: hsl(223, 31%, 20%);
+  --key-color: hsl(28, 16%, 70%);
+  --key-front-color: hsl(30, 25%, 89%);
+  --delete-key-color: hsl(221, 28%, 35%);
+  --delete-key-front-color: hsl(225, 22%, 49%);
+  --equals-key-color: hsl(6, 70%, 34%);
+  --equals-key-front-color: hsl(6, 63%, 50%);
+}
+
+/* Purple Theme */
+:root.purple {
+  --background-color: #17062a;
+  --screen-color: hsl(268, 71%, 17%);
+  --text-color: hsl(52, 100%, 62%);
+  --keypad-color: hsl(268, 71%, 17%);
+  --key-color: hsl(290, 70%, 36%);
+  --key-front-color: hsl(268, 47%, 21%);
+  --delete-key-color: hsl(285, 91%, 52%);
+  --delete-key-front-color: hsl(281, 89%, 26%);
+  --equals-key-color: hsl(177, 92%, 70%);
+  --equals-key-front-color: hsl(176, 100%, 44%);
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: sans-Serif;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  place-items: center;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+#container {
+  margin: auto;
+  width: min(95vw, 28.125rem);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+header > div:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+header > div:nth-of-type(2) {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  font-weight: 600;
+}
+
+#theme-container {
+  display: flex;
+  flex-flow: column;
+}
+
+#theme-numbers {
+  width: 4.3rem;
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.9rem;
+}
+
+.theme-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: var(--keypad-color);
+  width: 4.2rem;
+  padding: 0.3rem;
+  border-radius: 2rem;
+}
+
+.theme-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: var(--equals-key-front-color);
+  cursor: pointer;
+  margin: 0;
+}
+
+.theme-slider::-webkit-slider-thumb:hover {
+  filter: brightness(1.3);
+  cursor: pointer;
+}
+
+main {
+  margin: 0.75rem 0;
+}
+
+#screen {
+  background-color: var(--screen-color);
+  height: 6rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-align-last: right;
+  padding: 0.75rem 1.1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#input {
+  font-size: 2.5rem;
+  overflow-x: auto;
+}
+
+#output {
+  font-size: 1.4rem;
+  overflow-x: auto;
+}
+
+#key-pad {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+  background-color: var(--keypad-color);
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  gap: 1.2rem;
+}
+
+#key-pad > :nth-last-child(-n+2) {
+  grid-column: span 2;
+}
+
+button[data-key] {
+  background-color: var(--key-color);
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button[data-key]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.dark button[data-key] {
+  color: hsl(221, 14%, 31%);
+}
+
+span.front {
+  display: block;
+  background-color: var(--key-front-color);
+  padding: 0.8rem 0.4rem;
+  border-radius: inherit;
+  transform: translateY(-0.25rem);
+  height: 100%;
+  width: 100%;
+  line-height: 2.2rem;
+  will-change: transform;
+  transition: transform 250ms;
+}
+
+button[data-key]:hover > span.front {
+  filter: brightness(1.3);
+  transform: translateY(-0.25rem);
+}
+
+button[data-key]:active > span.front {
+  transform: translateY(-0.09rem);
+}
+
+span.special {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+#delete,
+#reset {
+  background-color: var(--delete-key-color);
+}
+
+#delete .front,
+#reset .front {
+  background-color: var(--delete-key-front-color);
+}
+
+#equals {
+  background-color: var(--equals-key-color);
+}
+
+.purple #equals > .front{
+  color: hsl(198, 20%, 13%);
+}
+
+#equals .front {
+  background-color: var(--equals-key-front-color);
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--equals-key-front-color);
+}
